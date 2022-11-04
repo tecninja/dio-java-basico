@@ -15,6 +15,6 @@ public class TiposVariaveis {
         final String EXEMP_CONSTANTE = "texto"; // Neste caso, a junção no prefixo final e a variável em caixa alta, indica que esta variável será constante
 
         System.out.print(exempInt + " " + exempStr + " " + exempShort);
-
+        System.out.print(exempVariavel + " " + EXEMP_CONSTANTE);
     }
 }
