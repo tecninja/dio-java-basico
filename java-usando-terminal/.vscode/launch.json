@@ -1,0 +1,42 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch CalculadoraImc",
+            "request": "launch",
+            "mainClass": "CalculadoraImc",
+            "projectName": "java-usando-terminal_41af369f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "java-usando-terminal_41af369f"
+        },
+        {
+            "type": "java",
+            "name": "Launch SobreMin",
+            "request": "launch",
+            "mainClass": "SobreMin",
+            "projectName": "java-usando-terminal_41af369f",
+            "args": [
+                "Esdras",
+                "Santos",
+                "23",
+                "1.78",
+                "90.5"
+            ]
+        }
+    ]
+}

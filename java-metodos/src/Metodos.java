@@ -8,6 +8,7 @@ public class Metodos {
     }
 
     public static double somar (double numero1, double numero2) {
+        // Recebe dois valores tipo double e retorna a soma entre eles
         return numero1 + numero2;
     }
 }
