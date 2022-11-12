@@ -7,9 +7,17 @@ public class App {
 
         Cliente cliente = new Cliente();
 
-        cliente.nome = Cliente.atribuirNome(cliente.scan);
+        System.out.println("Iniciando cadastro do cliente");
 
-        System.out.println("Prazer em conhecê-lo " + cliente.nome);
+        cliente = Cliente.cadastrarCliente(cliente);
+
+        System.out.println("Verificando capacidade de pagamento");
+
+        double capacidade = AnaliseCliente.verificarCapacidade(cliente);
+        boolean autorizacao = AnaliseCliente.verificarAutorizacao(cliente);
+
+        System.out.println("Autorização para empréstimo: " + autorizacao);
+        System.out.println("Capacidade do cliente: " + capacidade);
 
     };
 }

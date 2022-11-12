@@ -33,7 +33,7 @@ public class Cliente {
     }
 
     public static double atribuirSalario(Scanner scan){
-        System.out.println("Salario: [Usar 'ponto' como separador decimal]");
+        System.out.println("Salario: [Usar 'virgula' como separador decimal]");
         double salario = scan.nextDouble();
         return salario;
     }
@@ -138,5 +138,24 @@ public class Cliente {
         System.out.println("Informe o tempo de trabalho atual:");
         int tempo = scan.nextInt();
         return tempo;
+    }
+
+    public static Cliente cadastrarCliente(Cliente cliente) {
+        
+        cliente.nome = Cliente.atribuirNome(cliente.scan);
+        cliente.dataNascimento = Cliente.atribuirDataNascimento(cliente.scan);
+        cliente.salario = Cliente.atribuirSalario(cliente.scan);
+        cliente.contaCorrente = Cliente.atribuirContaCorrente(cliente.scan);
+        cliente.cartaoCredito = Cliente.atribuirCartaoCredito(cliente.scan);
+        cliente.negativacao = Cliente.atribuirNegativacao(cliente.scan);
+        cliente.financiamento = Cliente.atribuirFinanciamento(cliente.scan);
+        cliente.investimento = Cliente.atribuirInvestimento(cliente.scan);
+        cliente.scoreExterno = Cliente.atribuirScoreExterno(cliente.scan);
+        cliente.scoreInterno = Cliente.atribuirScoreInterno(cliente.scan);
+        cliente.autorizacaoGerencial = Cliente.atribuirAutorzacaoGerencial(cliente.scan);
+        cliente.tempoTrabalho = Cliente.atribuirTempoTrbalho(cliente.scan);
+        cliente.funcionarioPublico = Cliente.atribuirFuncionarioPublico(cliente.scan);     
+        
+        return cliente;
     }
 }
