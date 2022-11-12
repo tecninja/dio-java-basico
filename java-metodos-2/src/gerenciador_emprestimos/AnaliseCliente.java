@@ -10,9 +10,10 @@ public class AnaliseCliente {
         return true;
     }
 
+    /*
+     */
     public static double verificarCapacidade(Cliente cliente) {
         // Em desenvolvimento
         return 0.0;
     }
-    
 }

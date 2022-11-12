@@ -1,23 +1,41 @@
 package gerenciador_emprestimos;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         
-        System.out.println("Sisteme Gerenciador de Emprestimos");
+        boolean continuar = true;
 
-        Cliente cliente = new Cliente();
+        while(continuar == true) { 
 
-        System.out.println("Iniciando cadastro do cliente");
+            System.out.println("Sisteme Gerenciador de Emprestimos");
+            Cliente cliente = new Cliente();
+            Scanner scanner = new Scanner(System.in);
 
-        cliente = Cliente.cadastrarCliente(cliente);
+            System.out.println("Iniciar Proposta: [1]\nEncerrar Programa: [0]");
+            int resposta = scanner.nextInt();
 
-        System.out.println("Verificando capacidade de pagamento");
+            switch (resposta) {
+                case 1:
+                    System.out.println("Iniciando cadastro do cliente");
 
-        double capacidade = AnaliseCliente.verificarCapacidade(cliente);
-        boolean autorizacao = AnaliseCliente.verificarAutorizacao(cliente);
-
-        System.out.println("Autorização para empréstimo: " + autorizacao);
-        System.out.println("Capacidade do cliente: " + capacidade);
-
+                    cliente = Cliente.cadastrarCliente(cliente);
+        
+                    System.out.println("Verificando capacidade de pagamento");
+        
+                    double capacidade = AnaliseCliente.verificarCapacidade(cliente);
+                    boolean autorizacao = AnaliseCliente.verificarAutorizacao(cliente);
+        
+                    System.out.println("Autorização para empréstimo: " + autorizacao);
+                    System.out.println("Capacidade do cliente: " + capacidade);
+                    break;
+                case 0:
+                    System.out.println("Programa encerrado");
+                    continuar = false;
+                    break;
+                default:
+                    System.out.println("Informação inválida, tente novamente!");
+            }
+        }
     };
 }
