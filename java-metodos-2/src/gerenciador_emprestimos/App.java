@@ -32,6 +32,7 @@ public class App {
                 case 0:
                     System.out.println("Programa encerrado");
                     continuar = false;
+                    scanner.close();
                     break;
                 default:
                     System.out.println("Informação inválida, tente novamente!");
