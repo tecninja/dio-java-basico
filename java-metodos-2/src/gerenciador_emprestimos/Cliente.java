@@ -140,8 +140,11 @@ public class Cliente {
         return tempo;
     }
 
+    /*
+     * @params
+     */
     public static Cliente cadastrarCliente(Cliente cliente) {
-        
+
         cliente.nome = Cliente.atribuirNome(cliente.scan);
         cliente.dataNascimento = Cliente.atribuirDataNascimento(cliente.scan);
         cliente.salario = Cliente.atribuirSalario(cliente.scan);
