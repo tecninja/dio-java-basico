@@ -1,4 +1,5 @@
 package gerenciador_emprestimos;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class App {
@@ -8,7 +9,10 @@ public class App {
 
         while(continuar == true) { 
 
-            System.out.println("Sisteme Gerenciador de Emprestimos");
+            System.out.println("----------------------------------");
+            System.out.println("Sistema Gerenciador de Emprestimos");
+            System.out.println("----------------------------------");
+
             Cliente cliente = new Cliente();
             Scanner scanner = new Scanner(System.in);
 
@@ -17,17 +21,26 @@ public class App {
 
             switch (resposta) {
                 case 1:
+                    System.out.println("----------------------------------");
                     System.out.println("Iniciando cadastro do cliente");
+                    System.out.println("----------------------------------");
 
                     cliente = Cliente.cadastrarCliente(cliente);
-        
-                    System.out.println("Verificando capacidade de pagamento");
-        
+
+                    System.out.println("----------------------------------");
+                    System.out.println("Analisando os Dados");
+                    System.out.println("----------------------------------");
+
                     double capacidade = AnaliseCliente.verificarCapacidade(cliente);
                     boolean autorizacao = AnaliseCliente.verificarAutorizacao(cliente);
+                    LocalDate dataNasc = AnaliseCliente.stringParaData(cliente.dataNascimento);
+                    long parcelamento = AnaliseCliente.verificarLimiteIdade(dataNasc);
+                    double juros = AnaliseCliente.verificarTaxaJuros(cliente);
         
                     System.out.println("Autorização para empréstimo: " + autorizacao);
-                    System.out.println("Capacidade do cliente: " + capacidade);
+                    System.out.printf("Capacidade do cliente: %.2f\n", capacidade);
+                    System.out.println("Quantidade de parcelas máxima: " + parcelamento);
+                    System.out.printf("Taxa de juros: %.2f\n", juros);
                     break;
                 case 0:
                     System.out.println("Programa encerrado");
