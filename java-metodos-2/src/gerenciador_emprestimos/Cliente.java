@@ -1,5 +1,4 @@
 package gerenciador_emprestimos;
-
 import java.util.Scanner;
 
 public class Cliente {
